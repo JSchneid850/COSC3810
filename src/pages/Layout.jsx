@@ -22,11 +22,11 @@ const Layout = () => {
                   Classes
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><Link className="dropdown-item" to="/cosc2100">COSC2100</Link></li>
+                  <li><Link className="dropdown-item" to="/Cosc2100">COSC2100</Link></li>
                   <li><hr className="dropdown-divider"/></li>
-                  <li><Link className="dropdown-item" to="/cosc3810">COSC3810</Link></li>
+                  <li><Link className="dropdown-item" to="/Cosc3810">COSC3810</Link></li>
                   <li><hr className="dropdown-divider"/></li>
-                  <li><Link className="dropdown-item" to="/cosc4920">COSC4920</Link></li>
+                  <li><Link className="dropdown-item" to="/Cosc4920">COSC4920</Link></li>
                 </ul>
               </li>
             </ul>

@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <>
+    <div style={{ minHeight: "95vh", overflowX: "hidden" }}>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" href="#">
@@ -41,7 +41,7 @@ const Layout = () => {
       </nav>
   
       <Outlet />
-    </>
+    </div>
   )
 };
 

@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-import Footer from "./pages/Footer";
 import Cosc2100 from "./pages/Cosc2100";
 import Cosc3810 from "./pages/Cosc3810";
 import Cosc4920 from "./pages/Cosc4920";
@@ -17,7 +16,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home />} /> 
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="Cosc2100" element={<Cosc2100 />} />
@@ -27,7 +26,6 @@ export default function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

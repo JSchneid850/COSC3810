@@ -19,13 +19,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-        <h3>Assignments </h3>
+        <h3 style ={{lineHeight: 2}}>Assignments</h3>
         <p>Due 03-31-2023
-        <ul>
-          <li>
-            <Link to ="/assignment1">Assignment 1</Link>
-          </li>
-        </ul>
+        
         </p>
       </div>
     );

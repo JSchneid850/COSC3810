@@ -1,7 +1,7 @@
-function Pdfview(pdf){                 
+function Pdfview(){                 
     return(
         <div>
-            <iframe src= {pdf} width="100%" height="500px">
+            <iframe src="/sillybus.pdf" width="100%" height="auto">
             </iframe>
         </div>
     );

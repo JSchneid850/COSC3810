@@ -9,7 +9,7 @@ import Footer from "./pages/Footer";
 import Cosc2100 from "./pages/Cosc2100";
 import Cosc3810 from "./pages/Cosc3810";
 import Cosc4920 from "./pages/Cosc4920";
-import assignment1 from "./pages/assignment1";
+import Assignment1 from "./pages/Assignment1";
 
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
           <Route path="Cosc2100" element={<Cosc2100 />} />
           <Route path="Cosc3810" element={<Cosc3810 />} />
           <Route path="Cosc4920" element={<Cosc4920 />} />
-          <Route path="assignment1" element={<assignment1 />} />
+          <Route path="Assignment1" element={<Assignment1 />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

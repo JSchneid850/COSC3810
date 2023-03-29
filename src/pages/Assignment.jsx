@@ -1,5 +1,5 @@
 
-import PDFView from '../components/Pdfview.jsx';
+import PDFView from '../components/pdfview.jsx';
 
 const Assignment = (props) => {
     return (

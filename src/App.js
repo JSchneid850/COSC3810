@@ -5,11 +5,10 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-import Footer from "./pages/Footer";
 import Cosc2100 from "./pages/Cosc2100";
 import Cosc3810 from "./pages/Cosc3810";
 import Cosc4920 from "./pages/Cosc4920";
-import assignment1 from "./pages/assignment1";
+import Assignment from "./pages/Assignment";
 
 
 export default function App() {
@@ -17,17 +16,18 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home />} /> 
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="Cosc2100" element={<Cosc2100 />} />
           <Route path="Cosc3810" element={<Cosc3810 />} />
           <Route path="Cosc4920" element={<Cosc4920 />} />
-          <Route path="assignment1" element={<assignment1 />} />
+          <Route path="Assignment1" element={
+            <Assignment head="Assignment 1" pdfUrl="/sillybus.pdf"/>
+          } />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

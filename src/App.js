@@ -8,14 +8,15 @@ import NoPage from "./pages/NoPage";
 import Cosc2100 from "./pages/Cosc2100";
 import Cosc3810 from "./pages/Cosc3810";
 import Cosc4920 from "./pages/Cosc4920";
-import Assignment from "./pages/Assignment";
+import Assignment from "./components/Assignment";
 
 
 export default function App() {
   return (
+    <div className="d-flex flex-column min-vh-100">
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route  path="/" element={<Layout />}>
           <Route index element={<Home />} /> 
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
@@ -29,6 +30,7 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

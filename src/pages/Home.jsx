@@ -24,7 +24,7 @@ const Home = () => {
             <div className="col-sm-6">
               <div className="card">
                 <div className="card-body">
-                  <p>Due 03-31-2023</p>
+                  <p>COSC 3810: Due 03-31-2023</p>
                   <Link to="/assignment1" className="btn btn-outline-success">Assignment 1</Link>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 
-import PDFView from '../components/pdfview.jsx';
+import PDFView from './pdfview.jsx';
 
-const Assignment = (props) => {
+function Assignment(props){
     return (
     <>
         <h1 style={{padding: "20px"}}>{props.head}</h1>

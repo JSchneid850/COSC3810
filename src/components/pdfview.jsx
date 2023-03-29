@@ -1,6 +1,6 @@
-function PDFView(){                 
+function PDFView(pdf){                 
     return(
-        <iframe src="/sillybus.pdf" width="100%" height="1000px" />
+        <iframe src={pdf.url} width="100%" height="1000px" />
     );
 }
 

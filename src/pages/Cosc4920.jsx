@@ -21,7 +21,7 @@ function Cosc4920(){
 
     return (
     <>
-      <h1>cosc4920:</h1>;
+      <h1 className="p-3">cosc4920:</h1>;
         <Card style={{ width: "100%", minHeight: cardMinHeight }}>
           <Card.Body>
             <Card.Title>Assignment 1a (Due: 3/30/23)</Card.Title>

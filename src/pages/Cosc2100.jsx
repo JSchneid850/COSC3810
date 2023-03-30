@@ -22,7 +22,7 @@ const Cosc2100 = () => {
 
     return (
     <>
-      <h1>cosc2100:</h1>
+      <h1 className="p-3">cosc2100:</h1>
             <Card style={{ width: "100%", minHeight: cardMinHeight }}>
         <Card.Body>
           <Card.Title>Assignment 2 (Due: 4/2/23)</Card.Title>

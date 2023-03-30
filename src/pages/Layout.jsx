@@ -8,7 +8,7 @@ const Layout = () => {
       <div className="d-flex flex-column min-vh-100">
         <Header className="w-100"/>
         <div className='d-flex flex-column flex-grow-1'>
-          <Outlet />
+          <Outlet className="p-3" />
         </div>
         <Footer className="bg-light text-center py-3 fixed w-100" style={{ position: "", bottom: 0, left: 0, right: 0 }}/>
       </div>

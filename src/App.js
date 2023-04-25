@@ -9,6 +9,7 @@ import Cosc2100 from "./pages/Cosc2100";
 import Cosc3810 from "./pages/Cosc3810";
 import Cosc4920 from "./pages/Cosc4920";
 import Assignment from "./components/Assignment";
+import NewAssignment from "./pages/NewAssignment";
 
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="Assignment1" element={
             <Assignment head="Assignment 1" pdfUrl="/sillybus.pdf"/>
           } />
+          <Route path="NewAssignment" element={<NewAssignment />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

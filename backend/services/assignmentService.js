@@ -21,10 +21,10 @@ const getAssignment = async (req, res) => {
   const { id } = req.params;
   try {
     let collection = db.collection("assignment");
-
-
+    let assignment = dv.collection.findOne({ _id: id });
+    res.send(assignment).status(204);
   } catch (error) {
-
+    console.error(error);
   }
 };
 

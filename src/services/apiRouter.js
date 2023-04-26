@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-// Require your API functions here
-const { getAssignment, updateAssignment, delAssignment, addAssignment, listAssignment } = require('./assignmentService');
 
-// Define your routes here
-//make list assignment call
+const { getAssignment, addAssignment, listAssignment } = require('./assignmentService');
+const { getPost, addPost, listPost } = require('./postService');
 
 router.post('/assignment', addAssignment);
-router.get('/assignment', listAssignment);
+router.get('/assignment/list', listAssignment);
 router.get('/assignment/:id', getAssignment);
-router.put('/assignment/:id', updateAssignment);
-router.delete('/assignment/:id', delAssignment);
+
+router.post('/post', addPost);
+router.get('/post/list', listPost);
+router.get('/post/:id', getPost);
 
 module.exports = router;

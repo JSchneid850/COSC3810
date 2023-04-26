@@ -1,6 +1,8 @@
-import {Assignment} from "../models/assignmentModel.js";
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://Dicoda:uE9v6mgcmPJTbs5Q@cosc3810.yypyc7c.mongodb.net/?retryWrites=true&w=majority"
+const mongoose = require('mongoose');
+
+const { assignment } = require('./models/model');
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -26,34 +28,14 @@ const getAssignment = async (req, res) => {
   }
 };
 
-// Update an assignment by ID
-const updateAssignment = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-
-  } catch (error) {
-
-  }
-};
-
-// Delete an assignment by ID
-const delAssignment = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-
-  } catch (error) {
-
-  }
-};
 
 // Create a new assignment
 const addAssignment = async (req, res) => {
   try {
     let collection = db.collection("assignment");
-    let assignment = new Assignment(req.body);
-    let result = await collection.insertOne(assignment);
+    console.log(req.body)
+    let assign = new assignment({...req.body});
+    let result = await collection.insertOne(assign);
     res.send(result).status(204);
   } catch (error) {
     console.error(error);
@@ -64,7 +46,7 @@ const addAssignment = async (req, res) => {
 const listAssignment = async (req, res) => {
     console.log("listAssignment");
     try {
-      let collection = db.collection("assignment");
+      let collection = db.collection("Assignment");
       let result = await collection.find({}).toArray();
       console.log(result);
       res.send(result).status(204);
@@ -75,8 +57,6 @@ const listAssignment = async (req, res) => {
 
 module.exports = {
   getAssignment,
-  updateAssignment,
-  delAssignment,
   addAssignment,
   listAssignment
 };

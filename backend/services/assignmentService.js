@@ -1,6 +1,5 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://Dicoda:uE9v6mgcmPJTbs5Q@cosc3810.yypyc7c.mongodb.net/?retryWrites=true&w=majority"
-const mongoose = require('mongoose');
 
 const { assignment } = require('./models/model');
 
@@ -21,10 +20,10 @@ const getAssignment = async (req, res) => {
   const { id } = req.params;
   try {
     let collection = db.collection("assignment");
-
-
+    let assignment = dv.collection.findOne({ _id: id });
+    res.send(assignment).status(204);
   } catch (error) {
-
+    console.error(error);
   }
 };
 

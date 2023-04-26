@@ -1,6 +1,5 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://Dicoda:uE9v6mgcmPJTbs5Q@cosc3810.yypyc7c.mongodb.net/?retryWrites=true&w=majority"
-const mongoose = require('mongoose');
 
 const { assignment } = require('./models/model');
 

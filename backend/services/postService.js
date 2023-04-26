@@ -14,7 +14,14 @@ const { post } = require('./models/model');
 const db= client.db("cosc3810");
 
 const getPost = async (req, res) => {
-
+   const { id } = req.params;
+    try {
+      let collection = db.collection("post");
+      let post = dv.collection.findOne({ _id: id });
+      res.send(post).status(204);
+    } catch (error) {
+      console.error(error);
+    }
 }
 
 const addPost = async (req, res) => {
@@ -31,7 +38,10 @@ const addPost = async (req, res) => {
     }
 
 const listPost = async (req, res) => {
-    
+    db.collection("post").find({}).toArray(function(err, result) {
+        if (err) throw err;
+        res.send(result).status(204);
+      }); 
     }
 
 module.exports = {

@@ -106,13 +106,14 @@ const types = ["Post", "Assignment"];
 const handlePost = async (event) =>{
   event.preventDefault();
   const d = new Date();
-  const url = 'localhost:8080/api/post';
+  const url = 'http://localhost:8080/api/post';
   console.log(event.target.class.value);
-  const data = {
-    class: event.target.class.value,
-    title: event.target.title.value,
-    post: event.target.post.value,
-    time: d.toString()
+
+  let data = {
+    "class": event.target.class.value,
+    "title": event.target.title.value,
+    "post": event.target.post.value,
+    "time": d.toString()
   }
   console.log(data);
   await Axios.post(url, data).then((response) => {

@@ -17,7 +17,7 @@ const getPost = async (req, res) => {
    const { id } = req.params;
     try {
       let collection = db.collection("post");
-      let post = dv.collection.findOne({ _id: id });
+      let post = collection.findOne({ _id: id });
       res.send(post).status(204);
     } catch (error) {
       console.error(error);
@@ -34,14 +34,18 @@ const addPost = async (req, res) => {
       } catch (error) {
         console.error(error);
       }
-    
     }
 
 const listPost = async (req, res) => {
-    db.collection("post").find({}).toArray(function(err, result) {
-        if (err) throw err;
-        res.send(result).status(204);
-      }); 
+      console.log("listPost");
+      try{
+      const collection = db.collection("post")
+      let result = await collection.find({}).toArray();
+      console.log(result);
+      res.send(result).status(204);
+      } catch (error) {
+      console.error(error);
+    }
     }
 
 module.exports = {

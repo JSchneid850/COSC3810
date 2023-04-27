@@ -5,7 +5,8 @@ const AssignmentSchema = new mongoose.Schema({
   title: { type: String, required: true },
   data : { type: String, required: true },
   dueDate: { type: Date, required: true },
-  completed: { type: Boolean, default: false }
+  completed: { type: Boolean, default: false },
+  time : { type: String, required: true}
 });
 
 const PostSchema = new mongoose.Schema({

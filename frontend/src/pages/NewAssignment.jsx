@@ -85,16 +85,19 @@ function conditional(tab){
       <form onSubmit={handleAssignment}>
         <table>
           <span>Class: </span>
-            <select>
+            <select id="class">
               <option value="COSC2100">COSC2100</option>
               <option value="COSC3810">COSC3810</option>
               <option value="COSC4920">COSC4910</option>
             </select>
+            <span> Due: </span>
+            <input type="date" id="due" name="due" />
 
             <tr>
               <input type="text" class="title" placeholder="Title" id="title"/>
             </tr>
         </table>
+        <input type="file" id="file" name="file" />
         <input type="submit" value="Submit" />
       </form>
     )
@@ -108,12 +111,11 @@ const handlePost = async (event) =>{
   const d = new Date();
   const url = 'http://localhost:8080/api/post';
   console.log(event.target.class.value);
-
   let data = {
-    "class": event.target.class.value,
-    "title": event.target.title.value,
-    "post": event.target.post.value,
-    "time": d.toString()
+    class: event.target.class.value,
+    title: event.target.title.value,
+    post: event.target.post.value,
+    time: d.toString()
   }
   console.log(data);
   await Axios.post(url, data).then((response) => {
@@ -131,10 +133,41 @@ const handlePost = async (event) =>{
 }
 
 
+async function postRequest (file, event){
+  const d = new Date();
+  const url = 'http://localhost:8080/api/assignment';
+  var reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+    let data = {
+      class: event.target.class.value,
+      due: event.target.due.value,
+      title: event.target.title.value,
+      data: reader.result,
+      time: d.toString()
+    }
+    console.log(data);
+    Axios.post(url, data).then((response) => {
+      console.log(response);
+    }).catch((err) => {
+        if(err.response){
+          console.log(err.response);
+          console.log("server responded");
+        }else if(err.request){
+          console.log("network error");
+        }else{
+          console.log(err);
+        }
+    })
+  }
+}
 
-const handleAssignment = event => {
+
+const handleAssignment = async (event) => {
   event.preventDefault();
-
+  let selectedFile = event.target.file.files[0];
+  console.log(selectedFile);
+  await postRequest(selectedFile, event);  
 }
 
 

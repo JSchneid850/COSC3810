@@ -7,9 +7,10 @@ var cors = require('cors')
 app.use(cors())
 
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: true,
+  limit: '50mb'
 }));
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '50mb'}))
 
 app.use('/api', apiRouter);
 

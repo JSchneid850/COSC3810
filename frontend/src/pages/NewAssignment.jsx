@@ -1,6 +1,4 @@
 import { useState, useEffect} from "react";
-import { Card, Button } from "react-bootstrap";
-import Assignment from "../components/Assignment";
 import styled from "styled-components";
 import "../Layout.css";
 import Axios from "axios";

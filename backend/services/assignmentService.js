@@ -20,7 +20,7 @@ const getAssignment = async (req, res) => {
   const { id } = req.params;
   try {
     let collection = db.collection("assignment");
-    let assignment = dv.collection.findOne({ _id: id });
+    let assignment = collection.findOne({ _id: id });
     res.send(assignment).status(204);
   } catch (error) {
     console.error(error);
@@ -43,19 +43,30 @@ const addAssignment = async (req, res) => {
 
 // List all assignments
 const listAssignment = async (req, res) => {
-    console.log("listAssignment");
     try {
-      let collection = db.collection("Assignment");
+      const collection = db.collection("assignment");
       let result = await collection.find({}).toArray();
       console.log(result);
       res.send(result).status(204);
     } catch (error) {
       console.error(error);
     }
-};
+}
+
+const assignClassList = async (req, res) => {
+  try {
+    const collection = db.collection("assignment");
+    let result = await collection.find({ class: req.params.class }).toArray();
+    console.log(result);
+    res.send(result).status(204);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 module.exports = {
   getAssignment,
   addAssignment,
-  listAssignment
+  listAssignment,
+  assignClassList
 };

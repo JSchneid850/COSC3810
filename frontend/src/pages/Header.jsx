@@ -18,9 +18,6 @@ const Header = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/blogs">Discussions</Link>
-              </li>
-              <li className="nav-item">
                 <Link className="nav-link" to="/newassignment">New Assignment</Link>
               </li>
               <li className="nav-item dropdown">

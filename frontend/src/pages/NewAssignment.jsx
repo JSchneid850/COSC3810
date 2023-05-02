@@ -4,6 +4,7 @@ import Assignment from "../components/Assignment";
 import styled from "styled-components";
 import "../Layout.css";
 import Axios from "axios";
+import Popup from 'reactjs-popup';
 
 
 const NewAssignment = () => {
@@ -98,7 +99,9 @@ function conditional(tab){
             </tr>
         </table>
         <input type="file" id="file" name="file" />
-        <input type="submit" value="Submit" />
+        <Popup trigger={<input type="submit" value="Submit" />}>
+          <div>Assignment Uploaded!</div>
+        </Popup>
       </form>
     )
   }
@@ -169,7 +172,6 @@ const handleAssignment = async (event) => {
   let selectedFile = event.target.file.files[0];
   console.log(selectedFile);
   await postRequest(selectedFile, event);
-  window.location.reload();
 }
 
 

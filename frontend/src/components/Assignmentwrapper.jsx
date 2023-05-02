@@ -1,14 +1,15 @@
 
-import React from "react";
+import React from "react";  
 
 function Assignmentwrapper({ assignments }) {
     return (
         <div className="wrapper">
             {assignments.map((assignment, index) => (
                 <div className="assignment" key={index}>
-                    <h3>{assignment.title}</h3>
+                    <a href={`/assignment/${assignment.id}`}>{assignment.title}</a>
                     <p>{assignment.description}</p>
                     <p>{assignment.due_date}</p>
+                    <br/>
                 </div>
             ))}
         </div>

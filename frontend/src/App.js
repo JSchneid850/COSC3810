@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
@@ -22,6 +22,8 @@ export default function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="Cosc2100" element={<Cosc2100 />} />
+          <Route path="Cosc2100/:id" element={<Assignment/>} />
+          
           <Route path="Cosc3810" element={<Cosc3810 />} />
           <Route path="Cosc4920" element={<Cosc4920 />} />
           <Route path="Assignment1" element={

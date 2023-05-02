@@ -130,6 +130,7 @@ const handlePost = async (event) =>{
         console.log(err);
       }
   })
+  window.location.reload();
 }
 
 
@@ -167,7 +168,8 @@ const handleAssignment = async (event) => {
   event.preventDefault();
   let selectedFile = event.target.file.files[0];
   console.log(selectedFile);
-  await postRequest(selectedFile, event);  
+  await postRequest(selectedFile, event);
+  window.location.reload();
 }
 
 

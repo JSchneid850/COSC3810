@@ -1,4 +1,5 @@
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion,ObjectId } = require('mongodb');
+
 const uri = "mongodb+srv://Dicoda:uE9v6mgcmPJTbs5Q@cosc3810.yypyc7c.mongodb.net/?retryWrites=true&w=majority"
 
 const { assignment } = require('./models/model');
@@ -17,10 +18,9 @@ const db= client.db("cosc3810");
 
 // Get a single assignment by ID
 const getAssignment = async (req, res) => {
-  const { id } = req.params;
   try {
     let collection = db.collection("assignment");
-    let assignment = collection.findOne({ _id: id });
+    let assignment = await collection.findOne({ _id: new ObjectId(req.params.id) });
     res.send(assignment).status(204);
   } catch (error) {
     console.error(error);

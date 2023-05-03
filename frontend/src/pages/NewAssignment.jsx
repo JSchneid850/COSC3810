@@ -140,7 +140,7 @@ async function postRequest (file, event){
   reader.onload = function () {
     let data = {
       class: event.target.class.value,
-      due: event.target.due.value,
+      dueDate: event.target.due.value,
       title: event.target.title.value,
       data: reader.result,
       time: d.toString()

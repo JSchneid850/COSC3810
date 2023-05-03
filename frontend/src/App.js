@@ -20,7 +20,7 @@ export default function App() {
           <Route index element={<Home />} /> 
           <Route path="contact" element={<Contact />} />
           <Route path="Cosc2100" element={<Cosc2100 />} />
-          <Route path="Cosc2100/:id" element={<Assignment/>} />
+          <Route path="assignment/:id" element={<Assignment/>} />
           
           <Route path="Cosc3810" element={<Cosc3810 />} />
           <Route path="Cosc4920" element={<Cosc4920 />} />

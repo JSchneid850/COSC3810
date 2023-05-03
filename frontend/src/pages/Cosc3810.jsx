@@ -1,4 +1,8 @@
 import "../Class.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Assignmentwrapper from "../components/Assignmentwrapper.jsx";
+import Postwrapper from "../components/Postwrapper.jsx";
 
 function Cosc3810() {
   const [assignments, setAssignments] = useState([]);

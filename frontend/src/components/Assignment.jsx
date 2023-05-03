@@ -16,7 +16,7 @@ function Assignment(props){
         .then(function(response){
             setData(response.data.data);
             setHead(response.data.title)
-            setDue(response.data.due);
+            setDue(response.data.dueDate.substring(0,10));
         }).then
         .catch(function(error){
             console.log(error);

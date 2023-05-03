@@ -1,9 +1,13 @@
 import "../Class.css"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Assignmentwrapper from "../components/Assignmentwrapper.jsx";
+import Postwrapper from "../components/Postwrapper.jsx";
 
 function Cosc4920(){
   const [assignments, setAssignments] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/api/assignment/class/COSC4910")
+    axios.get("http://localhost:8080/api/assignment/class/COSC4920")
     .then(function(response){
       setAssignments(response.data);
     })
@@ -11,7 +15,7 @@ function Cosc4920(){
 
 const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/api/post/class/COSC4910")
+    axios.get("http://localhost:8080/api/post/class/COSC4920")
     .then(function(response){
       setPosts(response.data);
     })

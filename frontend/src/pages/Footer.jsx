@@ -7,7 +7,7 @@ const Footer = () => {
 
         <div className="container-fluid">
             <Link className="navbar-brand" href="#">
-                <img src="E3M.png" alt="E3M logo" width="35" height="35" classname="image-fluid" />
+                <img src="../E3M.png" alt="E3M logo" width="35" height="35" classname="image-fluid" />
             </Link>
             <ul className="navbar-nav">
                 <li className="nav-item">

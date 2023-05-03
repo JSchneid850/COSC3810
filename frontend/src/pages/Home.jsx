@@ -18,19 +18,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-        <h3 className="p-3" style ={{lineHeight: 2}}>Assignments</h3>
-        <div className="fluid-container">
-          <div className="row px-3">
-            <div className="col-sm-6 px-3">
-              <div className="card">
-                <div className="card-body">
-                  <p>COSC 3810: Due 03-31-2023</p>
-                  <Link to="/assignment1" className="btn btn-outline-success">Assignment 1</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
       </div>
     );
   };

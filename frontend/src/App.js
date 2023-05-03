@@ -9,6 +9,8 @@ import Cosc3810 from "./pages/Cosc3810";
 import Cosc4920 from "./pages/Cosc4920";
 import Assignment from "./components/Assignment";
 import NewAssignment from "./pages/NewAssignment";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 
 export default function App() {
@@ -21,12 +23,11 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="Cosc2100" element={<Cosc2100 />} />
           <Route path="assignment/:id" element={<Assignment/>} />
+          <Route path="Privacy" element={<Privacy />} />
+          <Route path="Terms" element={<Terms />} />
           
           <Route path="Cosc3810" element={<Cosc3810 />} />
           <Route path="Cosc4920" element={<Cosc4920 />} />
-          <Route path="Assignment1" element={
-            <Assignment head="Assignment 1" pdfUrl="/sillybus.pdf"/>
-          } />
           <Route path="NewAssignment" element={<NewAssignment />} />
           <Route path="*" element={<NoPage />} />
         </Route>

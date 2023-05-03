@@ -48,8 +48,21 @@ const listPost = async (req, res) => {
     }
     }
 
+const postClassList = async (req, res) => {
+      try {
+        const collection = db.collection("post");
+        let result = await collection.find({ class: req.params.class }).toArray();
+        console.log(result);
+        res.send(result).status(204);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+
 module.exports = {
     getPost,
     addPost,
-    listPost
+    listPost,
+    postClassList
 }

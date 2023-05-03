@@ -9,12 +9,22 @@ function Assignment(props){
     const [data, setData] = useState("");
     const [head, setHead] = useState("");
     const [due, setDue] = useState("");
-    axios.get("http://localhost:8080/api/assignment/" + id)
+     useEffect(() => {
+       let uri= new URL("http://localhost:8080/api/assignment/" + id);
+       async function fetchData(){
+    await axios.get(uri)
         .then(function(response){
             setData(response.data.data);
             setHead(response.data.title)
             setDue(response.data.due);
-        })
+        }).then
+        .catch(function(error){
+            console.log(error);
+        }
+        )
+    }
+    fetchData();
+}, []);
     
     return (
     <>

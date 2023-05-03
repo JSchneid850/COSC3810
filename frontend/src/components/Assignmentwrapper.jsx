@@ -6,10 +6,10 @@ function Assignmentwrapper({ assignments }) {
         <div className="wrapper">
             {assignments.map((assignment, index) => (
                 <div className="assignment" key={index}>
-                    <a href={`/assignment/${assignment.id}`}>{assignment.title}</a>
-                    <p>{assignment.description}</p>
-                    <p>{assignment.due_date}</p>
-                    <br/>
+                    <h3>{assignment.title}</h3>
+                    <p>Due: {assignment.dueDate.substring(0,10)}</p>
+                    <a class="btn btn-primary" href={`/assignment/${assignment._id}`} role="button">Open</a>
+                    <hr/>
                 </div>
             ))}
         </div>

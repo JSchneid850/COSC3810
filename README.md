@@ -6,11 +6,21 @@ Utilizes the following technologies:
  -Express
  -MongoDB
 
-To run the application, first install the dependencies by running the following command in the root directory for each server:
-npm install
+Installation:
+in /frontend and in /backend run
 
-Then, run the following command to start the react server:
-npm run start
+```npm install```
 
-Then, run the following command to start the express server:
-npm run start-server
+to install required packages/dependencies
+
+
+Running the application
+
+in /frontend run 
+
+```npm run start```
+
+in /backend run 
+
+```npm run start-server```
+
